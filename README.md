@@ -27,12 +27,6 @@ echo 'export $(cut -d= -f1 $VIRTUAL_ENV/src/stoic-html/.env)' >> bin/activate
 
 . bin/activate
 
-# You need to have PostgreSQL installed
-# Create user "stoic-html" with password "stoic-html":
-sudo runuser -u postgres -- createuser -s -P stoic-html
-
-createdb $PGDATABASE
-manage.py migrate
 ```
 
 # Naming convention
