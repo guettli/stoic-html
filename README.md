@@ -10,7 +10,7 @@ That's why I switched from using a template language to creating the HTML direct
 
 That's in general considered dirty, and frowned upon.
 
-For me it is [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/): I have all these things together in one place. Which gives me a lot of power and speed.
+For me it is [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/): I have all these things together in one place. That gives me a lot of power and speed.
 
 
 # Install
