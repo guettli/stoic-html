@@ -18,8 +18,7 @@ def test_list_to_html_list():
     assert list_to_html_list([]) == ''
 
 
-def test_link(user):
-    assert link(user) == f'<a href="/user_profile/{user.id}">Dr. Foo</a>'
+def test_link():
 
     class Dummy:
         def get_absolute_url(self):
