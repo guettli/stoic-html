@@ -4,7 +4,7 @@ omit =
  */migrations/*.py
 
 source =
- stoic-html
+ stoic_html
 
 [html]
 directory = coverage_html_report
