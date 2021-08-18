@@ -6,7 +6,6 @@ from stoic_html import (
 
 
 def test_join():
-    assert 0
     assert join(['<', '>', '&'], ',') == '&lt;,&gt;,&amp;'
     assert join([1, 2, 3]) == '123'
     assert join([]) == ''
