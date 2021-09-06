@@ -1,4 +1,3 @@
 from setuptools import setup
-import sys
-assert 0, sys.argv
-setup()
+import os
+setup(version=os.environ.get('BUILD_VERSION'))
