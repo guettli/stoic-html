@@ -1,3 +1,4 @@
 from setuptools import setup
-assert 0
+import sys
+assert 0, sys.args
 setup()
