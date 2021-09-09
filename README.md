@@ -12,6 +12,39 @@ That's in general considered dirty, and frowned upon.
 
 For me it is [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/): I have all these things together in one place. That gives me a lot of power and speed.
 
+# Methods
+
+## Method join()
+
+```python
+join(my_list, sep='', type=None, empty_text='')
+```
+
+Joins a list of strings to a SafeString with the help of [conditional_escape()](https://docs.djangoproject.com/en/dev/ref/utils/#django.utils.html.conditional_escape)
+
+`type` can be 'ul' or 'ol' to create HTML lists.
+
+## Method link()
+
+```python
+link(obj, text=None)
+```
+
+Create a hyperlink to obj.
+
+Returns something like '<a href="...">text</a>'
+
+If "text" is empty, then `str(obj)` gets used.
+
+## Method admin_link()
+
+```python
+admin_link(obj, text=None)
+```
+
+Returns a link to the admin-page of `obj`.
+
+If "text" is empty, then `str(obj)` gets used.
 
 # Install
 

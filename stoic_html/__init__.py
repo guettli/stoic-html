@@ -10,22 +10,27 @@ def join(my_list, sep='', type=None, empty_text=''):
         return empty_text
     if type is None:
         return mark_safe(sep.join([conditional_escape(item) for item in my_list]))
-    if type == 'ul':
+    if type in ['ul', 'ol']:
         return format_html(
-            '<ul>{}</ul>', join([format_html('<li>{}</li>', item) for item in my_list])
+            f'<{type}>{{}}</{type}>', join([format_html('<li>{}</li>', item) for item in my_list])
         )
     raise Exception(f'Unknown type {type}')
 
 
-def link(obj):
+def link(obj, text=None):
     if isinstance(obj, User):
         url = reverse('user_profile_page', kwargs=dict(user_id=obj.id))
     else:
         url = obj.get_absolute_url()
-    return format_html('<a href="{}">{}</a>', url, obj)
+    if text is None:
+        text = str(obj)
+    return format_html('<a href="{}">{}</a>', url, text)
 
 
 def list_to_html_list(items, type='ul', li_style=''):
+    """
+    TODO: remove this method. Just use join()
+    """
     new = []
     if li_style:
         li_style = format_html(' style="{li_style}"', li_style=li_style)

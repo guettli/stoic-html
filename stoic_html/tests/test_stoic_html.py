@@ -1,3 +1,5 @@
+from django.utils.html import mark_safe
+
 from stoic_html import (
     join,
     list_to_html_list,
@@ -10,11 +12,14 @@ def test_join():
     assert join([1, 2, 3]) == '123'
     assert join([]) == ''
     assert join([], empty_text='x') == 'x'
+    assert join(['x'], type='ul') == '<ul><li>x</li></ul>'
+    assert join(['x'], type='ol') == '<ol><li>x</li></ol>'
 
 
 def test_list_to_html_list():
     assert list_to_html_list(['a', 'b']) == '<ul><li>a</li><li>b</li></ul>'
     assert list_to_html_list(['a', 'b'], type='ol') == '<ol><li>a</li><li>b</li></ol>'
+    assert list_to_html_list(['a', 'b'], type='ul') == '<ul><li>a</li><li>b</li></ul>'
     assert list_to_html_list([]) == ''
 
 
@@ -28,6 +33,9 @@ def test_link():
             return 'y'
 
     assert link(Dummy()) == '<a href="x">y</a>'
+    assert link(Dummy(), 1) == '<a href="x">1</a>'
+    assert link(Dummy(), 'Peter & Mary') == '<a href="x">Peter &amp; Mary</a>'
+    assert link(Dummy(), mark_safe('<button>press me</button>')) == '<a href="x"><button>press me</button></a>'
 
 
 def test_admin_link():
