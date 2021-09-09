@@ -62,10 +62,6 @@ echo 'export $(cut -d= -f1 $VIRTUAL_ENV/src/stoic-html/.env)' >> bin/activate
 
 ```
 
-# Naming convention
-
-See: https://github.com/guettli/django-htmx-fun
-
 # Guidelines
 
 See: https://github.com/guettli/programming-guidelines
