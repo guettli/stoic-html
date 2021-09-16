@@ -49,6 +49,12 @@ If "text" is empty, then `str(obj)` gets used.
 # Install
 
 ```
+pip install stoic-html
+```
+
+# Development
+
+```
 python3 -m venv stoic-html-env
 cd stoic-html-env/
 . bin/activate
@@ -61,6 +67,8 @@ echo 'export $(cut -d= -f1 $VIRTUAL_ENV/src/stoic-html/.env)' >> bin/activate
 . bin/activate
 
 ```
+
+Issues about new ideas and Pull-Requests are welcome. I would like to hear from you!
 
 # Guidelines
 
